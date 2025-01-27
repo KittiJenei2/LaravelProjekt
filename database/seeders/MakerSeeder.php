@@ -7,9 +7,21 @@ use Illuminate\Database\Seeder;
 
 class MakerSeeder extends Seeder
 {
+    const ITEMS = [
+        "Ford",
+        "Mercedes",
+        "Fiat",
+        "Opel",
+        "Audi",
+        "Peugeot"
+    ];
+
+
     /**
      * Run the database seeds.
      */
+
+    
     public function run(): void
     {
         foreach (self::ITEMS as $item) {
