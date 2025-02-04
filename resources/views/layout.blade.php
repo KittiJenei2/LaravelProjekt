@@ -14,29 +14,19 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="{{ route('vehicles.index') }}">Járművek</a></li>
-                <li><a href="{{ route('makers.index') }}">Gyártók</a></li>
-                   <!--@if(auth()->check())
-<li>
-<form class="logout" action="{{ route('logout') }}" method="post">
-                               @csrf
-<button type="submit">Kijelentkezés</button>
-</form>
-</li>
-                   @else
-<li><a href="{{ route('login') }}">Login</a></li>
-                   @endif-->
-</ul>
-</nav>
-</div>
-</header>
+        <div>
+            <nav>
+                <ul>
+                    <li><a href="{{ route('makers.index') }}">Gyártók</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 <main>
        @yield('content')
 </main>
 <footer>
-<p>&copy; 2024 Kovács László</p>
+<p>&copy; 2025 Jenei Kitti</p>
 </footer>
 </body>
 </html>

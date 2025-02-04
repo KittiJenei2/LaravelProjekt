@@ -1,11 +1,17 @@
+
 @extends('layout')
 
-@section('section')
+@section('content')
 
-<h1>Karosszériák</h1>
+<h1>Autógyártók</h1>
 <div>
-    @include('success')
-    <a href="{{route('bodies.create') }}" title="Új">Új hozzáadása</a>
-    @foreach($bodies as $body)
+    <a href="{{route('makers.create') }}" title="Új">Új hozzáadása</a>
+    @foreach($makers as $maker)
         <div class = "row {{$loop->iteration % 2 == 0 ? 'even' : 'odd' }}">
-            <div class="col id">{{$body->id}}</div>
+            <div class="col id">{{$maker->id}}</div>
+            <div class="col name">{{$maker->name}}</div>
+        </div>
+    @endforeach
+</div>
+
+@endsection

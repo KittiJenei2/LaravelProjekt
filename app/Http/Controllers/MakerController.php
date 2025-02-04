@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Maker;
 
 class MakerController extends Controller
 {
@@ -12,7 +13,8 @@ class MakerController extends Controller
     public function index()
     {
         $makers = Maker::all();
-        return view('maker.index', ['makers' => $makers]);
+        return view('makers.index', ['makers' => $makers]);
+
     }
 
     /**
@@ -20,15 +22,23 @@ class MakerController extends Controller
      */
     public function create()
     {
-        //
+        return view(view: 'makers.create');
     }
 
-    /**
+     /**
      * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        $maker  = new Maker();
+        $maker->name = $request->input('name');
+        $maker->logo = $request->input('logo');
+        $maker->save();
+ 
+        return redirect()->route('makers.index')->with('success', "{$maker->name} sikeresen létrehozva");
     }
 
     /**
