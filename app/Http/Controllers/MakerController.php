@@ -70,6 +70,11 @@ class MakerController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $maker = Maker::find($id);
+        if ($maker) {
+            $maker->delete();
+            return redirect()->route('makers.index')->with('success', 'Gyártó sikeresen törölve.');
+        }
+        return redirect()->route('makers.index')->with('error', 'Hiba történt a törlés során.');
     }
 }
